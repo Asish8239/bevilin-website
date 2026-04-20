@@ -212,7 +212,7 @@ export default function HeroUpgraded() {
             </motion.div>
           </div>
 
-          {/* BOTTOM CENTER — floating pharma grid */}
+          {/* BOTTOM CENTER — floating pharma grid (enlarged) */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -222,9 +222,18 @@ export default function HeroUpgraded() {
             <motion.div
               animate={{ y: [0, -12, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="bg-white/10 backdrop-blur-lg rounded-3xl p-6 border border-white/20 shadow-2xl w-full max-w-2xl"
+              className="w-full max-w-[720px]"
+              style={{
+                background: "rgba(255,255,255,0.12)",
+                backdropFilter: "blur(10px)",
+                WebkitBackdropFilter: "blur(10px)",
+                border: "1px solid rgba(255,255,255,0.22)",
+                borderRadius: "20px",
+                padding: "28px 32px",
+                boxShadow: "0 8px 40px rgba(0,0,0,0.18)",
+              }}
             >
-              <div className="grid grid-cols-4 sm:grid-cols-9 gap-3">
+              <div className="grid grid-cols-4 sm:grid-cols-9 gap-4">
                 {[
                   { icon: "💊", label: "Tablets" },
                   { icon: "🧪", label: "Research" },
@@ -241,11 +250,18 @@ export default function HeroUpgraded() {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 1.2 + i * 0.07 }}
-                    whileHover={{ scale: 1.2, rotate: 8 }}
-                    className="aspect-square bg-white/15 rounded-xl flex flex-col items-center justify-center p-2 border border-white/20 hover:border-white/50 transition-all cursor-pointer"
+                    whileHover={{
+                      scale: 1.12,
+                      rotate: 6,
+                      boxShadow: "0 0 18px rgba(172,196,55,0.5)",
+                    }}
+                    className="aspect-square bg-white/15 rounded-2xl flex flex-col items-center justify-center border border-white/20 hover:border-[#acc437]/60 transition-all cursor-pointer"
+                    style={{ padding: "10px 6px" }}
                   >
-                    <span className="text-2xl">{item.icon}</span>
-                    <span className="text-white text-[10px] font-medium mt-1 hidden sm:block">{item.label}</span>
+                    <span className="text-3xl">{item.icon}</span>
+                    <span className="text-white text-[11px] font-medium mt-1.5 hidden sm:block leading-tight text-center">
+                      {item.label}
+                    </span>
                   </motion.div>
                 ))}
               </div>

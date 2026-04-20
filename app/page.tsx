@@ -9,7 +9,6 @@ import Features from "@/components/home/Features";
 import FeaturedProducts from "@/components/home/FeaturedProducts";
 import ResearchDevelopment from "@/components/home/ResearchDevelopment";
 import Timeline from "@/components/home/Timeline";
-import Milestones from "@/components/home/Milestones";
 import Trademarks from "@/components/home/Trademarks";
 import DoctorTrust from "@/components/home/DoctorTrust";
 import ComplianceSafety from "@/components/home/ComplianceSafety";
@@ -49,10 +48,6 @@ export default function Home() {
 
       <ScrollReveal delay={0.1}>
         <Timeline />
-      </ScrollReveal>
-
-      <ScrollReveal delay={0.1}>
-        <Milestones />
       </ScrollReveal>
 
       <ScrollReveal delay={0.1}>
