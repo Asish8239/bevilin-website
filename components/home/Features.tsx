@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Shield, FlaskConical, Award, HeadphonesIcon, Microscope, FileCheck } from "lucide-react";
+import { Shield, FlaskConical, Award, HeadphonesIcon, Microscope } from "lucide-react";
 import GlowCard from "@/components/ui/GlowCard";
 
 const features = [
@@ -29,11 +29,6 @@ const features = [
     icon: Microscope,
     title: "Research Driven",
     description: "Continuous investment in pharmaceutical research and development for better formulations.",
-  },
-  {
-    icon: FileCheck,
-    title: "Fully Licensed",
-    description: "FSSAI, Drug License, and GST registered — fully compliant with all regulatory requirements.",
   },
 ];
 
@@ -69,7 +64,7 @@ export default function Features() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
@@ -77,6 +72,12 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
+              className={
+                // Centre the last row items when there's an odd count
+                features.length % 3 !== 0 && index === features.length - 1
+                  ? "lg:col-start-2 w-full"
+                  : "w-full"
+              }
             >
               <GlowCard className="bg-gray-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 h-full border border-gray-100">
                 <div

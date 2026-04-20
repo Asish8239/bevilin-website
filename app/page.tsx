@@ -12,7 +12,6 @@ import Timeline from "@/components/home/Timeline";
 import Milestones from "@/components/home/Milestones";
 import Trademarks from "@/components/home/Trademarks";
 import DoctorTrust from "@/components/home/DoctorTrust";
-import Certifications from "@/components/home/Certifications";
 import ComplianceSafety from "@/components/home/ComplianceSafety";
 import Testimonials from "@/components/home/Testimonials";
 import BlogPreview from "@/components/home/BlogPreview";
@@ -62,10 +61,6 @@ export default function Home() {
 
       <ScrollReveal delay={0.1}>
         <DoctorTrust />
-      </ScrollReveal>
-
-      <ScrollReveal delay={0.1}>
-        <Certifications />
       </ScrollReveal>
 
       <ScrollReveal delay={0.1}>
