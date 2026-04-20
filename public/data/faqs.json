@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "question": "How do I know if the medicines are authentic?",
+    "answer": "All our medicines are sourced directly from certified manufacturers and distributors. We are GMP and ISO certified, ensuring 100% authenticity. Each product comes with proper packaging and batch information.",
+    "category": "Quality"
+  },
+  {
+    "id": "2",
+    "question": "What is your delivery time?",
+    "answer": "We typically deliver within 3-5 business days for most locations. Metro cities usually receive orders within 2-3 days. Free shipping is available on orders above ₹500.",
+    "category": "Delivery"
+  },
+  {
+    "id": "3",
+    "question": "Do you require a prescription?",
+    "answer": "For prescription medicines, yes, a valid prescription from a registered medical practitioner is required. Over-the-counter medicines and supplements can be purchased without a prescription.",
+    "category": "Orders"
+  },
+  {
+    "id": "4",
+    "question": "What is your return policy?",
+    "answer": "We accept returns within 7 days of delivery for unopened products in original packaging. Medicines cannot be returned once opened due to safety regulations. Contact our support team for return requests.",
+    "category": "Returns"
+  },
+  {
+    "id": "5",
+    "question": "How can I track my order?",
+    "answer": "Once your order is shipped, you'll receive a tracking number via email and SMS. You can use this to track your order on our website or the courier's website.",
+    "category": "Delivery"
+  },
+  {
+    "id": "6",
+    "question": "What payment methods do you accept?",
+    "answer": "We accept all major credit/debit cards, UPI, net banking, and digital wallets. Cash on delivery is available for select locations.",
+    "category": "Payment"
+  },
+  {
+    "id": "7",
+    "question": "Can I cancel my order?",
+    "answer": "Yes, you can cancel your order before it's shipped. Once shipped, cancellation is not possible, but you can return the product as per our return policy.",
+    "category": "Orders"
+  },
+  {
+    "id": "8",
+    "question": "Do you offer discounts for bulk orders?",
+    "answer": "Yes, we offer special discounts for bulk orders. Please contact our customer support team with your requirements for a customized quote.",
+    "category": "Pricing"
+  },
+  {
+    "id": "9",
+    "question": "How do I contact customer support?",
+    "answer": "You can reach us via phone at +91 1800-123-4567, email at support@bevilin.com, or use our AI chatbot for instant assistance. We're available 24/7.",
+    "category": "Support"
+  },
+  {
+    "id": "10",
+    "question": "Are your supplements safe?",
+    "answer": "Yes, all our supplements are manufactured in GMP-certified facilities and undergo rigorous quality testing. They are safe when taken as directed. Always consult your doctor before starting any new supplement.",
+    "category": "Quality"
+  }
+]

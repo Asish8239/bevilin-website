@@ -1,0 +1,206 @@
+[
+    {
+        "id":  "1",
+        "name":  "Vitamin D3 1000 IU",
+        "description":  "Essential vitamin for bone health and immunity. Supports calcium absorption and overall wellness.",
+        "price":  299,
+        "originalPrice":  499,
+        "category":  "Vitamins \u0026 Supplements",
+        "image":  "/images/products/product-1.jpg",
+        "inStock":  true,
+        "benefits":  [
+                         "Supports bone health",
+                         "Boosts immunity",
+                         "Improves mood",
+                         "Enhances calcium absorption"
+                     ],
+        "usage":  "Take 1 capsule daily with food or as directed by physician."
+    },
+    {
+        "id":  "2",
+        "name":  "Omega-3 Fish Oil",
+        "description":  "Premium quality fish oil rich in EPA and DHA for heart and brain health.",
+        "price":  599,
+        "originalPrice":  899,
+        "category":  "Vitamins \u0026 Supplements",
+        "image":  "/images/products/product-2.jpg",
+        "inStock":  true,
+        "benefits":  [
+                         "Supports heart health",
+                         "Improves brain function",
+                         "Reduces inflammation",
+                         "Promotes eye health"
+                     ],
+        "usage":  "Take 1-2 capsules daily with meals."
+    },
+    {
+        "id":  "3",
+        "name":  "Paracetamol 500mg",
+        "description":  "Effective pain reliever and fever reducer for common ailments.",
+        "price":  45,
+        "originalPrice":  60,
+        "category":  "Pain Relief",
+        "image":  "/images/products/product-3.jpg",
+        "inStock":  true,
+        "benefits":  [
+                         "Relieves pain",
+                         "Reduces fever",
+                         "Fast acting",
+                         "Safe for most adults"
+                     ],
+        "usage":  "Adults: 1-2 tablets every 4-6 hours. Do not exceed 8 tablets in 24 hours."
+    },
+    {
+        "id":  "4",
+        "name":  "Multivitamin Complex",
+        "description":  "Complete daily nutrition with essential vitamins and minerals.",
+        "price":  449,
+        "originalPrice":  699,
+        "category":  "Vitamins \u0026 Supplements",
+        "image":  "/images/products/product-4.jpg",
+        "inStock":  true,
+        "benefits":  [
+                         "Complete nutrition",
+                         "Boosts energy",
+                         "Supports immunity",
+                         "Improves overall health"
+                     ],
+        "usage":  "Take 1 tablet daily after breakfast."
+    },
+    {
+        "id":  "5",
+        "name":  "Vitamin C 1000mg",
+        "description":  "High potency vitamin C for immune support and antioxidant protection.",
+        "price":  349,
+        "originalPrice":  549,
+        "category":  "Vitamins \u0026 Supplements",
+        "image":  "/images/products/product-5.jpg",
+        "inStock":  true,
+        "benefits":  [
+                         "Boosts immunity",
+                         "Antioxidant protection",
+                         "Supports skin health",
+                         "Aids iron absorption"
+                     ],
+        "usage":  "Take 1 tablet daily with water."
+    },
+    {
+        "id":  "6",
+        "name":  "Ibuprofen 400mg",
+        "description":  "Anti-inflammatory pain reliever for various types of pain.",
+        "price":  89,
+        "originalPrice":  120,
+        "category":  "Pain Relief",
+        "image":  "/images/products/product-6.jpg",
+        "inStock":  true,
+        "benefits":  [
+                         "Reduces inflammation",
+                         "Relieves pain",
+                         "Lowers fever",
+                         "Fast acting"
+                     ],
+        "usage":  "Adults: 1 tablet every 6-8 hours with food. Maximum 3 tablets daily."
+    },
+    {
+        "id":  "7",
+        "name":  "Calcium + Vitamin D",
+        "description":  "Essential combination for strong bones and teeth.",
+        "price":  399,
+        "originalPrice":  599,
+        "category":  "Vitamins \u0026 Supplements",
+        "image":  "/images/products/product-7.jpg",
+        "inStock":  true,
+        "benefits":  [
+                         "Strengthens bones",
+                         "Prevents osteoporosis",
+                         "Supports dental health",
+                         "Improves muscle function"
+                     ],
+        "usage":  "Take 1 tablet twice daily with meals."
+    },
+    {
+        "id":  "8",
+        "name":  "Probiotic Complex",
+        "description":  "Advanced formula with 10 billion CFU for digestive health.",
+        "price":  799,
+        "originalPrice":  1199,
+        "category":  "Vitamins \u0026 Supplements",
+        "image":  "/images/products/product-8.jpg",
+        "inStock":  true,
+        "benefits":  [
+                         "Improves digestion",
+                         "Boosts immunity",
+                         "Balances gut flora",
+                         "Reduces bloating"
+                     ],
+        "usage":  "Take 1 capsule daily on empty stomach."
+    },
+    {
+        "id":  "9",
+        "name":  "Biotin 10000mcg",
+        "description":  "High strength biotin for healthy hair, skin, and nails.",
+        "price":  499,
+        "originalPrice":  799,
+        "category":  "Vitamins \u0026 Supplements",
+        "image":  "/images/products/product-9.jpg",
+        "inStock":  true,
+        "benefits":  [
+                         "Promotes hair growth",
+                         "Strengthens nails",
+                         "Improves skin health",
+                         "Supports metabolism"
+                     ],
+        "usage":  "Take 1 capsule daily with food."
+    },
+    {
+        "id":  "10",
+        "name":  "Zinc 50mg",
+        "description":  "Essential mineral for immune function and wound healing.",
+        "price":  249,
+        "originalPrice":  399,
+        "category":  "Vitamins \u0026 Supplements",
+        "image":  "/images/products/product-10.jpg",
+        "inStock":  true,
+        "benefits":  [
+                         "Boosts immunity",
+                         "Supports wound healing",
+                         "Improves skin health",
+                         "Enhances taste and smell"
+                     ],
+        "usage":  "Take 1 tablet daily with food."
+    },
+    {
+        "id":  "11",
+        "name":  "Aloe Vera Gel",
+        "description":  "Pure aloe vera gel for skin hydration and healing.",
+        "price":  199,
+        "originalPrice":  299,
+        "category":  "Skincare",
+        "image":  "/images/products/product-11.jpg",
+        "inStock":  true,
+        "benefits":  [
+                         "Hydrates skin",
+                         "Soothes sunburn",
+                         "Reduces acne",
+                         "Anti-aging properties"
+                     ],
+        "usage":  "Apply to clean skin 2-3 times daily."
+    },
+    {
+        "id":  "12",
+        "name":  "Ashwagandha 500mg",
+        "description":  "Premium ayurvedic herb for stress relief and vitality.",
+        "price":  549,
+        "originalPrice":  849,
+        "category":  "Ayurvedic",
+        "image":  "/images/products/product-12.jpg",
+        "inStock":  true,
+        "benefits":  [
+                         "Reduces stress",
+                         "Improves energy",
+                         "Enhances focus",
+                         "Supports immunity"
+                     ],
+        "usage":  "Take 1 capsule twice daily with milk or water."
+    }
+]

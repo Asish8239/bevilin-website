@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "title": "10 Essential Vitamins for Daily Health",
+    "excerpt": "Discover the most important vitamins your body needs every day for optimal health and wellness.",
+    "content": "Vitamins play a crucial role in maintaining our health...",
+    "image": "/images/sections/quality/quality-1.jpg",
+    "author": "Dr. Priya Sharma",
+    "date": "March 15, 2024",
+    "category": "Nutrition"
+  },
+  {
+    "id": "2",
+    "title": "Understanding Pain Management",
+    "excerpt": "Learn about different types of pain and effective management strategies for better quality of life.",
+    "content": "Pain management is an essential aspect of healthcare...",
+    "image": "/images/sections/manufacturing/manufacturing-1.jpg",
+    "author": "Dr. Rajesh Kumar",
+    "date": "March 12, 2024",
+    "category": "Health"
+  },
+  {
+    "id": "3",
+    "title": "Boost Your Immunity Naturally",
+    "excerpt": "Simple lifestyle changes and supplements that can help strengthen your immune system.",
+    "content": "A strong immune system is your body's first line of defense...",
+    "image": "/images/sections/customer/customer-1.jpg",
+    "author": "Dr. Anita Desai",
+    "date": "March 10, 2024",
+    "category": "Wellness"
+  },
+  {
+    "id": "4",
+    "title": "The Benefits of Omega-3 Fatty Acids",
+    "excerpt": "Why omega-3s are essential for heart health, brain function, and overall wellness.",
+    "content": "Omega-3 fatty acids are essential nutrients...",
+    "image": "/images/sections/quality/quality-2.jpg",
+    "author": "Dr. Priya Sharma",
+    "date": "March 8, 2024",
+    "category": "Nutrition"
+  },
+  {
+    "id": "5",
+    "title": "Ayurvedic Herbs for Modern Life",
+    "excerpt": "Ancient wisdom meets modern science: discover powerful ayurvedic herbs for stress and vitality.",
+    "content": "Ayurveda offers time-tested solutions for modern health challenges...",
+    "image": "/images/sections/manufacturing/manufacturing-2.jpg",
+    "author": "Dr. Rajesh Kumar",
+    "date": "March 5, 2024",
+    "category": "Ayurveda"
+  },
+  {
+    "id": "6",
+    "title": "Skincare Essentials for Every Season",
+    "excerpt": "Expert tips on maintaining healthy, glowing skin throughout the year.",
+    "content": "Your skin needs different care in different seasons...",
+    "image": "/images/sections/customer/customer-2.jpg",
+    "author": "Dr. Anita Desai",
+    "date": "March 1, 2024",
+    "category": "Beauty"
+  }
+]
