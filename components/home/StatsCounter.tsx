@@ -6,7 +6,7 @@ import { Users, Package, Award, TrendingUp } from "lucide-react";
 
 export default function StatsCounter() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: false, margin: "-100px" });
 
   const stats = [
     { icon: Users, label: "Happy Customers", value: 50000, suffix: "+" },
@@ -21,7 +21,7 @@ export default function StatsCounter() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -68,7 +68,10 @@ function StatCard({
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView) {
+      setCount(0); // reset when out of view so it re-animates on re-entry
+      return;
+    }
 
     let start = 0;
     const duration = 2000;
@@ -91,7 +94,7 @@ function StatCard({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: false }}
       transition={{ delay }}
       whileHover={{ 
         scale: 1.03, 

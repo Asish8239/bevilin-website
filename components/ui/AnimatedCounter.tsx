@@ -18,10 +18,13 @@ export default function AnimatedCounter({
 }: AnimatedCounterProps) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: false, margin: "-100px" });
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView) {
+      setCount(0); // reset so counter re-animates on re-entry
+      return;
+    }
 
     let startTime: number;
     let animationFrame: number;

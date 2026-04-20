@@ -37,7 +37,7 @@ export default function Trademarks() {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
@@ -64,7 +64,7 @@ export default function Trademarks() {
                 key={tm.name}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.4, delay: index * 0.07 }}
                 whileHover={{ y: -8, scale: 1.05 }}
                 className="relative flex flex-col items-center justify-center gap-3 p-6 rounded-2xl border text-center transition-all group"

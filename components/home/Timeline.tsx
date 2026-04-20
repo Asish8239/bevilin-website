@@ -32,7 +32,7 @@ export default function Timeline() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
@@ -60,7 +60,7 @@ export default function Timeline() {
                 key={milestone.year}
                 initial={{ opacity: 0, x: isEven ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 className={`flex items-start gap-6 mb-16 last:mb-0 ${
                   isEven ? "flex-row" : "flex-row-reverse"

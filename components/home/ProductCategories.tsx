@@ -32,7 +32,7 @@ export default function ProductCategories() {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
@@ -57,7 +57,7 @@ export default function ProductCategories() {
               key={area.label}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
               whileHover={{ y: -6, scale: 1.05 }}
               className="group flex flex-col items-center gap-3 p-5 rounded-2xl border border-gray-100 bg-white cursor-default transition-all duration-300 hover:shadow-lg"

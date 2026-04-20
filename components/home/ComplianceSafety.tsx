@@ -72,7 +72,7 @@ export default function ComplianceSafety() {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
@@ -99,7 +99,7 @@ export default function ComplianceSafety() {
                 key={item.title}
                 initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -6 }}
                 className="bg-white rounded-2xl p-7 border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col gap-5"

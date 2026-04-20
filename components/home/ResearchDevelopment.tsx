@@ -55,7 +55,7 @@ export default function ResearchDevelopment() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -72,7 +72,7 @@ export default function ResearchDevelopment() {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ delay: index * 0.1 }}
               className="group"
             >
@@ -92,7 +92,7 @@ export default function ResearchDevelopment() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="mt-16 text-center"
         >
           <div className="inline-block bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-8">
