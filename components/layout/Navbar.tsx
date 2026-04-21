@@ -39,11 +39,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { href: "/",         label: getTranslation(language, "nav.home") },
+    { href: "/", label: getTranslation(language, "nav.home") },
     { href: "/products", label: getTranslation(language, "nav.products") },
-    { href: "/about",    label: getTranslation(language, "nav.about") },
-    { href: "/blog",     label: getTranslation(language, "nav.blog") },
-    { href: "/contact",  label: getTranslation(language, "nav.contact") },
+    { href: "/about", label: getTranslation(language, "nav.about") },
+    { href: "/blog", label: getTranslation(language, "nav.blog") },
+    { href: "/contact", label: getTranslation(language, "nav.contact") },
   ];
 
   return (
@@ -51,14 +51,13 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: visible ? 0 : -100 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-sm"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-md border-b border-gray-200 shadow-sm"
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <div className="relative h-[70px] w-[260px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between h-16 sm:h-20">
+          {/* Logo - Left */}
+          <Link href="/" className="flex-shrink-0">
+            <div className="relative h-12 w-28 sm:h-14 sm:w-32 md:h-16 md:w-36">
               <Image
                 src="/images/logo/bevilin-logo.png"
                 alt="Bevilin"
@@ -69,13 +68,13 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop nav links */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Desktop nav links - Center */}
+          <div className="hidden md:flex items-center gap-6 lg:gap-8 absolute left-1/2 transform -translate-x-1/2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-800 hover:text-blue-600 font-medium transition-colors text-sm"
+                className="text-gray-800 hover:text-blue-600 font-medium transition-colors text-sm whitespace-nowrap"
               >
                 {link.label}
               </Link>
@@ -83,8 +82,8 @@ export default function Navbar() {
           </div>
 
           {/* Right actions */}
-          <div className="flex items-center gap-3">
-            <div className="hidden md:block">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="hidden lg:block">
               <LanguageToggle onLanguageChange={setLanguage} />
             </div>
 
@@ -95,11 +94,11 @@ export default function Navbar() {
               <Search className="w-5 h-5 text-gray-700" />
             </button>
 
-            <Link href="/cart">
-              <div className="relative p-2 hover:bg-gray-100 rounded-lg transition-colors">
+            <Link href="/cart" className="relative">
+              <div className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
                 <ShoppingCart className="w-5 h-5 text-gray-700" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-blue-600 text-white text-xs rounded-full flex items-center justify-center font-bold">
+                  <span className="absolute top-0 right-0 w-5 h-5 bg-blue-600 text-white text-xs rounded-full flex items-center justify-center font-bold">
                     {cartCount}
                   </span>
                 )}
@@ -111,10 +110,11 @@ export default function Navbar() {
               className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
               aria-label="Toggle menu"
             >
-              {isOpen
-                ? <X className="w-6 h-6 text-gray-700" />
-                : <Menu className="w-6 h-6 text-gray-700" />
-              }
+              {isOpen ? (
+                <X className="w-6 h-6 text-gray-700" />
+              ) : (
+                <Menu className="w-6 h-6 text-gray-700" />
+              )}
             </button>
           </div>
         </div>
@@ -128,9 +128,9 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-white border-t border-gray-200 overflow-hidden"
+            className="md:hidden bg-white border-t border-gray-200"
           >
-            <div className="container mx-auto px-4 py-4 space-y-1">
+            <div className="max-w-7xl mx-auto px-4 py-3 space-y-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -141,6 +141,9 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              <div className="px-4 py-3 border-t border-gray-100 mt-2 pt-3">
+                <LanguageToggle onLanguageChange={setLanguage} />
+              </div>
             </div>
           </motion.div>
         )}
