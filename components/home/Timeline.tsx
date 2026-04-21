@@ -25,7 +25,7 @@ const milestones = [
 
 export default function Timeline() {
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative">
+    <section className="py-10 md:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-white relative">
       <GridBackground />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -42,7 +42,7 @@ export default function Timeline() {
           >
             Our Story
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Our <span style={{ color: "#acc437" }}>Journey</span>
           </h2>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto">

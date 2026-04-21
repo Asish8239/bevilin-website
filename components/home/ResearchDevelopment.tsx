@@ -28,7 +28,7 @@ export default function ResearchDevelopment() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary-900 via-secondary-900 to-gray-900 text-white relative">
+    <section className="py-10 md:py-16 lg:py-20 bg-gradient-to-br from-primary-900 via-secondary-900 to-gray-900 text-white relative">
       <div className="absolute inset-0 opacity-10 -z-10">
         {[...Array(30)].map((_, i) => (
           <motion.div
@@ -58,7 +58,7 @@ export default function ResearchDevelopment() {
           viewport={{ once: false }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Research & Development
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
@@ -98,17 +98,17 @@ export default function ResearchDevelopment() {
           <div className="inline-block bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-8">
             <div className="flex items-center justify-center gap-12 flex-wrap">
               <div>
-                <div className="text-4xl font-bold text-primary-400 mb-2">50+</div>
+                <div className="text-3xl sm:text-4xl font-bold text-primary-400 mb-2">50+</div>
                 <div className="text-gray-300">Research Projects</div>
               </div>
               <div className="w-px h-12 bg-white/20" />
               <div>
-                <div className="text-4xl font-bold text-secondary-400 mb-2">100+</div>
+                <div className="text-3xl sm:text-4xl font-bold text-secondary-400 mb-2">100+</div>
                 <div className="text-gray-300">Scientists</div>
               </div>
               <div className="w-px h-12 bg-white/20" />
               <div>
-                <div className="text-4xl font-bold text-primary-400 mb-2">25+</div>
+                <div className="text-3xl sm:text-4xl font-bold text-primary-400 mb-2">25+</div>
                 <div className="text-gray-300">Patents</div>
               </div>
             </div>

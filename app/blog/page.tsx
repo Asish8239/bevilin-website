@@ -73,7 +73,7 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen py-20" style={{ background: "#f8fafc" }}>
-      <div className="container mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -86,7 +86,7 @@ export default function BlogPage() {
           >
             Insights
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-3xl sm:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Health <span style={{ color: "#acc437" }}>Blog</span>
           </h1>
           <p className="text-lg text-gray-500">Expert insights and tips for better health</p>

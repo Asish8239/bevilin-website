@@ -11,6 +11,7 @@ const trademarks = [
   { name: "DAPSIT" },
   { name: "GLUWIN" },
   { name: "TESLAR" },
+  { name: "BEVILIN PHARMA" },
 ];
 
 const colors = [
@@ -21,11 +22,12 @@ const colors = [
   { bg: "#acc43710", border: "#acc43730", text: "#acc437" },
   { bg: "#0073bd10", border: "#0073bd30", text: "#0073bd" },
   { bg: "#2e319210", border: "#2e319230", text: "#2e3192" },
+  { bg: "#00aeef10", border: "#00aeef30", text: "#00aeef" },
 ];
 
 export default function Trademarks() {
   return (
-    <section className="py-20 bg-gray-50 relative">
+    <section className="py-10 md:py-16 lg:py-20 bg-gray-50 relative">
       <div
         className="absolute inset-0 -z-10"
         style={{
@@ -33,7 +35,7 @@ export default function Trademarks() {
         }}
       />
 
-      <div className="container mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +49,7 @@ export default function Trademarks() {
           >
             Intellectual Property
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Our Registered{" "}
             <span style={{ color: "#acc437" }}>Trademarks</span>
           </h2>
@@ -56,7 +58,7 @@ export default function Trademarks() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 gap-3 md:gap-4">
           {trademarks.map((tm, index) => {
             const c = colors[index % colors.length];
             return (

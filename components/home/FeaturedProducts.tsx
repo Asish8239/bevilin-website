@@ -41,7 +41,7 @@ export default function FeaturedProducts() {
   const doubled = [...products, ...products];
 
   return (
-    <section className="py-20 bg-gray-50 relative overflow-hidden">
+    <section className="py-10 md:py-16 lg:py-20 bg-gray-50 relative overflow-hidden">
       <div
         className="absolute inset-0 -z-10 opacity-40"
         style={{
@@ -65,7 +65,7 @@ export default function FeaturedProducts() {
             >
               Our Range
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
               Featured{" "}
               <span style={{ color: "#acc437" }}>Products</span>
             </h2>

@@ -16,15 +16,15 @@ export default function StatsCounter() {
   ];
 
   return (
-    <section ref={ref} className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section ref={ref} className="py-10 md:py-16 lg:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Our <span className="text-gradient">Impact</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -32,7 +32,7 @@ export default function StatsCounter() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {stats.map((stat, index) => (
             <StatCard
               key={index}
@@ -107,7 +107,7 @@ function StatCard({
       <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
         <Icon className="w-8 h-8 text-white" />
       </div>
-      <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
+      <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
         {count.toLocaleString()}
         {suffix}
       </div>

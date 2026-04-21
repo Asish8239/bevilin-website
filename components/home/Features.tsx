@@ -34,7 +34,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="py-20 bg-white relative">
+    <section className="py-10 md:py-16 lg:py-20 bg-white relative">
       <div
         className="absolute inset-0 -z-10"
         style={{
@@ -56,7 +56,7 @@ export default function Features() {
           >
             Why Bevilin
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Why Choose <span style={{ color: "#acc437" }}>Bevilin</span>
           </h2>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto">

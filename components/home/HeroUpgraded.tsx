@@ -95,8 +95,8 @@ export default function HeroUpgraded() {
         />
 
         {/* ── Main layout: left text | right buttons + trust ── */}
-        <div className="container mx-auto px-4 sm:px-6 relative z-10 pb-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-16 md:pb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
 
             {/* LEFT — centered heading + subheading */}
             <motion.div
@@ -119,7 +119,7 @@ export default function HeroUpgraded() {
               </motion.div>
 
               {/* Heading */}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-2xl sm:text-3xl md:text-4xl lg:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
                 <motion.span
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -145,7 +145,7 @@ export default function HeroUpgraded() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="text-xl md:text-2xl text-white/85 max-w-xl leading-relaxed mx-auto lg:mx-0"
+                className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/85 max-w-xl leading-relaxed mx-auto lg:mx-0"
               >
                 A licensed pharmaceutical company committed to manufacturing,
                 research, and distributing quality medicines across India since 2009.
@@ -217,7 +217,7 @@ export default function HeroUpgraded() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}
-            className="mt-20 flex justify-center"
+            className="mt-12 md:mt-20 flex justify-center px-4"
           >
             <motion.div
               animate={{ y: [0, -12, 0] }}
@@ -229,11 +229,11 @@ export default function HeroUpgraded() {
                 WebkitBackdropFilter: "blur(10px)",
                 border: "1px solid rgba(255,255,255,0.22)",
                 borderRadius: "20px",
-                padding: "28px 32px",
+                padding: "20px 16px",
                 boxShadow: "0 8px 40px rgba(0,0,0,0.18)",
               }}
             >
-              <div className="grid grid-cols-4 sm:grid-cols-9 gap-4">
+              <div className="grid grid-cols-3 sm:grid-cols-9 gap-3 md:gap-4">
                 {[
                   { icon: "💊", label: "Tablets" },
                   { icon: "🧪", label: "Research" },

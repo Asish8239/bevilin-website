@@ -6,6 +6,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ChatBotUpgraded from "@/components/chatbot/ChatBotUpgraded";
 import Loader from "@/components/Loader";
+import CustomCursor from "@/components/ui/CustomCursor";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,6 +40,7 @@ export default function RootLayout({
       </head>
 
       <body className={inter.className}>
+        <CustomCursor />
         <Loader>
           <Navbar />
           <main className="min-h-screen">{children}</main>

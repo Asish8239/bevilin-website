@@ -33,7 +33,7 @@ const testimonials = [
 
 export default function DoctorTrust() {
   return (
-    <section className="py-20 bg-white relative">
+    <section className="py-10 md:py-16 lg:py-20 bg-white relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-50/30 to-transparent -z-10" />
 
       <div className="container mx-auto px-4 relative z-10">
@@ -50,7 +50,7 @@ export default function DoctorTrust() {
           >
             Professional Trust
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Trusted by{" "}
             <span style={{ color: "#acc437" }}>Medical Professionals</span>
           </h2>

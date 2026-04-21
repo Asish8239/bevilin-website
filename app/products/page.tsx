@@ -57,7 +57,7 @@ export default function ProductsPage() {
 
   return (
     <div className="min-h-screen py-20" style={{ background: "#f8fafc" }}>
-      <div className="container mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -71,7 +71,7 @@ export default function ProductsPage() {
           >
             Our Range
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-3xl sm:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Our <span style={{ color: "#acc437" }}>Products</span>
           </h1>
           <p className="text-lg text-gray-500 max-w-xl mx-auto">

@@ -75,8 +75,8 @@ export default function BlogPreview() {
   }, []);
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6">
+    <section className="py-10 md:py-16 lg:py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -91,7 +91,7 @@ export default function BlogPreview() {
             >
               Insights
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
               Health <span style={{ color: "#acc437" }}>Blog</span>
             </h2>
             <p className="text-gray-500">Expert tips and insights for better health</p>

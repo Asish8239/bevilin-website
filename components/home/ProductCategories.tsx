@@ -20,7 +20,7 @@ const therapeuticAreas = [
 
 export default function ProductCategories() {
   return (
-    <section className="py-20 bg-white relative">
+    <section className="py-10 md:py-16 lg:py-20 bg-white relative">
       <div
         className="absolute inset-0 -z-10"
         style={{
@@ -28,7 +28,7 @@ export default function ProductCategories() {
         }}
       />
 
-      <div className="container mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ export default function ProductCategories() {
           >
             Our Focus Areas
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Therapeutic{" "}
             <span style={{ color: "#acc437" }}>Areas</span>
           </h2>
@@ -51,7 +51,7 @@ export default function ProductCategories() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 gap-3 md:gap-4">
           {therapeuticAreas.map((area, index) => (
             <motion.div
               key={area.label}

@@ -60,7 +60,7 @@ const commitments = [
 
 export default function ComplianceSafety() {
   return (
-    <section className="py-20 bg-gray-50 relative overflow-hidden">
+    <section className="py-10 md:py-16 lg:py-20 bg-gray-50 relative overflow-hidden">
       <div
         className="absolute inset-0 -z-10"
         style={{
@@ -68,7 +68,7 @@ export default function ComplianceSafety() {
         }}
       />
 
-      <div className="container mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -82,7 +82,7 @@ export default function ComplianceSafety() {
           >
             Our Standards
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Compliance &amp;{" "}
             <span style={{ color: "#acc437" }}>Quality Commitment</span>
           </h2>
