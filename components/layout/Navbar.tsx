@@ -55,20 +55,20 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo - Left */}
+
+          {/* Logo */}
           <Link href="/" className="flex-shrink-0">
-            <div className="relative h-12 w-28 sm:h-14 sm:w-32 md:h-16 md:w-36">
-              <Image
-                src="/images/logo/bevilin-logo.png"
-                alt="Bevilin"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
+            <Image
+              src="/images/logo/bevilin-logo.png"
+              alt="Bevilin"
+              width={260}
+              height={80}
+              className="h-[60px] sm:h-[70px] md:h-[75px] w-auto object-contain"
+              priority
+            />
           </Link>
 
-          {/* Desktop nav links - Center */}
+          {/* Center Nav */}
           <div className="hidden md:flex items-center gap-6 lg:gap-8 absolute left-1/2 transform -translate-x-1/2">
             {navLinks.map((link) => (
               <Link
@@ -81,21 +81,18 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Right actions */}
+          {/* Right */}
           <div className="flex items-center gap-2 sm:gap-3">
             <div className="hidden lg:block">
               <LanguageToggle onLanguageChange={setLanguage} />
             </div>
 
-            <button
-              className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
-              aria-label="Search"
-            >
+            <button className="p-2 hover:bg-gray-100 rounded-lg">
               <Search className="w-5 h-5 text-gray-700" />
             </button>
 
             <Link href="/cart" className="relative">
-              <div className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+              <div className="p-2 hover:bg-gray-100 rounded-lg">
                 <ShoppingCart className="w-5 h-5 text-gray-700" />
                 {cartCount > 0 && (
                   <span className="absolute top-0 right-0 w-5 h-5 bg-blue-600 text-white text-xs rounded-full flex items-center justify-center font-bold">
@@ -107,41 +104,30 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
-              aria-label="Toggle menu"
+              className="md:hidden p-2 hover:bg-gray-100 rounded-lg"
             >
-              {isOpen ? (
-                <X className="w-6 h-6 text-gray-700" />
-              ) : (
-                <Menu className="w-6 h-6 text-gray-700" />
-              )}
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden bg-white border-t border-gray-200"
+            className="md:hidden bg-white border-t"
           >
-            <div className="max-w-7xl mx-auto px-4 py-3 space-y-1">
+            <div className="px-4 py-3 space-y-1">
               {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block px-4 py-3 text-gray-800 hover:bg-gray-100 rounded-lg transition-colors font-medium"
-                >
+                <Link key={link.href} href={link.href} className="block px-4 py-3">
                   {link.label}
                 </Link>
               ))}
-              <div className="px-4 py-3 border-t border-gray-100 mt-2 pt-3">
+              <div className="px-4 pt-3 border-t">
                 <LanguageToggle onLanguageChange={setLanguage} />
               </div>
             </div>

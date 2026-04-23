@@ -61,12 +61,13 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <div className="relative h-[75px] w-[280px] mb-4">
+            <div className="flex items-center mb-4">
               <Image
                 src="/images/logo/bevilin-logo.png"
                 alt="Bevilin"
-                fill
-                className="object-contain"
+                width={220}
+                height={70}
+                className="object-contain h-auto w-auto max-h-[80px]"
               />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-2">
