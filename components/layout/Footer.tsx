@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
 
   const quickLinks = [
     { href: "/",        label: "Home" },
@@ -61,13 +60,13 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <div className="flex items-center mb-4">
+            <div className="flex items-center mb-5">
               <Image
                 src="/images/logo/bevilin-logo.png"
                 alt="Bevilin"
-                width={220}
-                height={70}
-                className="object-contain h-auto w-auto max-h-[80px]"
+                width={548}
+                height={456}
+                className="h-[95px] sm:h-[110px] w-auto object-contain"
               />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-2">
@@ -156,7 +155,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-sm">
-            © {currentYear} Bevilin Pharma Private Limited. All rights reserved.
+            © 2022 Bevilin Pharma Private Limited. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             {["Privacy Policy", "Terms of Service"].map((label) => (

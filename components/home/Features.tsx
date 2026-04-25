@@ -50,12 +50,6 @@ export default function Features() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p
-            className="text-sm font-semibold uppercase tracking-widest mb-3"
-            style={{ color: "#0073bd" }}
-          >
-            Why Bevilin
-          </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Why Choose <span style={{ color: "#acc437" }}>Bevilin</span>
           </h2>

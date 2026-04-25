@@ -54,17 +54,14 @@ export default function ContactPage() {
                   Contact Information
                 </h2>
 
-                <div className="space-y-6">
+                  <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Phone className="w-6 h-6 text-primary-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">
-                        Phone
-                      </h3>
-                      <p className="text-gray-600">+91 1800-123-4567</p>
-                      <p className="text-gray-600">+91 1800-123-4568</p>
+                      <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
+                      <p className="text-gray-600">+91 9490899922</p>
                     </div>
                   </div>
 
@@ -73,10 +70,7 @@ export default function ContactPage() {
                       <Mail className="w-6 h-6 text-secondary-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">
-                        Email
-                      </h3>
-                      <p className="text-gray-600">support@bevilin.com</p>
+                      <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
                       <p className="text-gray-600">info@bevilin.com</p>
                     </div>
                   </div>
@@ -86,15 +80,13 @@ export default function ContactPage() {
                       <MapPin className="w-6 h-6 text-primary-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">
-                        Address
-                      </h3>
+                      <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
                       <p className="text-gray-600">
-                        123 Healthcare Street
+                        156/40/2, 1st Cross,
                         <br />
-                        Medical District
+                        Muthurayaswamy Layout,
                         <br />
-                        Mumbai, Maharashtra 400001
+                        Bangalore, Karnataka – 560076
                         <br />
                         India
                       </p>

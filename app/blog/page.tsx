@@ -86,10 +86,20 @@ export default function BlogPage() {
           >
             Insights
           </p>
-          <h1 className="text-4xl md:text-3xl sm:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Health <span style={{ color: "#acc437" }}>Blog</span>
           </h1>
-          <p className="text-lg text-gray-500">Expert insights and tips for better health</p>
+          <p className="text-lg text-gray-500 mb-8">Expert insights and tips for better health</p>
+
+          {/* Coming soon notice */}
+          <div className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl border mx-auto"
+            style={{ background: "#0073bd08", borderColor: "#0073bd30" }}
+          >
+            <span className="text-2xl">🚧</span>
+            <p className="text-sm font-medium" style={{ color: "#0073bd" }}>
+              Content will be launched soon. Currently under development.
+            </p>
+          </div>
         </motion.div>
 
         {loading && (

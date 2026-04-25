@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { BadgeCheck } from "lucide-react";
 
 const trademarks = [
+  { name: "BEVILIN" },
   { name: "ANGOSTAT" },
   { name: "BEVIPAN" },
   { name: "CLOPEL" },
@@ -11,7 +12,6 @@ const trademarks = [
   { name: "DAPSIT" },
   { name: "GLUWIN" },
   { name: "TESLAR" },
-  { name: "BEVILIN PHARMA" },
 ];
 
 const colors = [

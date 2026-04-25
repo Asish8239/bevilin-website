@@ -178,10 +178,10 @@ export default function HeroUpgraded() {
                 <MedicineScan />
 
                 <MagneticButton className="group w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-lg border-2 border-white/30 text-white rounded-xl font-semibold hover:bg-white/20 hover:border-white/50 transition-all">
-                  <div className="flex items-center justify-center gap-2">
+                  <Link href="/blog" className="flex items-center justify-center gap-2">
                     <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
                     Watch Our Story
-                  </div>
+                  </Link>
                 </MagneticButton>
               </motion.div>
 

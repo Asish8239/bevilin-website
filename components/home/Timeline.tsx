@@ -1,25 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Calendar, ShieldCheck } from "lucide-react";
+import { Lightbulb, Building2, TrendingUp } from "lucide-react";
 import GridBackground from "@/components/backgrounds/GridBackground";
 
 const milestones = [
   {
     year: "2010",
-    icon: Calendar,
-    title: "Foundation",
+    icon: Lightbulb,
+    title: "Bevilin Vision Begins",
     description:
-      "Bevilin Pharma Private Limited was incorporated with a mission to make quality pharmaceutical products accessible across India.",
+      "The foundation of Bevilin was envisioned with a mission to deliver quality and affordable healthcare solutions to patients across India.",
     accent: false,
   },
   {
     year: "2022",
-    icon: ShieldCheck,
-    title: "Establishment, Licensing & Digital Transformation",
+    icon: Building2,
+    title: "Company Incorporation",
     description:
-      "Received FSSAI License, Drug License, and GST Registration. Launched digital operations and established full regulatory compliance — marking Bevilin as a fully licensed pharmaceutical company.",
+      "Bevilin Pharma Private Limited was officially incorporated, establishing its presence in the pharmaceutical industry with full regulatory compliance — including FSSAI License, Drug License, and GST Registration.",
     accent: true,
+  },
+  {
+    year: "2023+",
+    icon: TrendingUp,
+    title: "Expansion & Achievements",
+    description:
+      "Bevilin expanded its product portfolio across 13 therapeutic areas, secured multiple registered trademarks, and strengthened its market presence through ethical practices, quality certifications, and growing partnerships with healthcare professionals across India.",
+    accent: false,
   },
 ];
 
@@ -28,7 +36,7 @@ export default function Timeline() {
     <section className="py-10 md:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-white relative">
       <GridBackground />
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -46,7 +54,7 @@ export default function Timeline() {
             Our <span style={{ color: "#acc437" }}>Journey</span>
           </h2>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-            From incorporation in 2010 to a fully licensed pharmaceutical company in 2022
+            From a vision in 2010 to a fully licensed and growing pharmaceutical company
           </p>
         </motion.div>
 
