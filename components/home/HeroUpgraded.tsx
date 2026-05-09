@@ -26,10 +26,10 @@ export default function HeroUpgraded() {
   }, [words.length]);
 
   return (
-    <section className="relative flex flex-col pt-20">
+    <section className="relative flex flex-col">
       {/* ── Hero content block ── */}
       <div
-        className="relative flex items-center justify-center min-h-screen"
+        className="relative flex items-center justify-center min-h-screen pt-28 sm:pt-32 lg:pt-36 xl:pt-40"
         style={{
           background:
             "linear-gradient(135deg, #2e3192 0%, #0073bd 30%, #00aeef 60%, #53a847 80%, #acc437 100%)",
@@ -95,31 +95,31 @@ export default function HeroUpgraded() {
         />
 
         {/* ── Main layout: left text | right buttons + trust ── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-16 md:pb-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 pb-20 md:pb-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 xl:gap-20 items-center">
 
             {/* LEFT — centered heading + subheading */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center lg:text-left"
+              className="text-center lg:text-left max-w-3xl mx-auto lg:mx-0"
             >
               {/* Badge */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="w-fit max-w-[90%] mx-auto lg:mx-0 flex items-center justify-center gap-2 flex-wrap px-4 py-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full text-white mb-8"
+                className="w-fit max-w-[90%] mx-auto lg:mx-0 flex items-center justify-center gap-2 flex-wrap px-4 py-2 sm:px-5 sm:py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white mb-8 lg:mb-10"
               >
                 <Award className="w-4 h-4 text-[#acc437] shrink-0" />
-                <span className="text-xs sm:text-sm font-medium leading-snug text-center break-words">
+                <span className="text-xs sm:text-sm font-medium leading-relaxed text-center break-words">
                   Licensed &amp; Certified Since 2022 · GMP Compliant
                 </span>
               </motion.div>
 
               {/* Heading */}
-              <h1 className="text-3xl sm:text-2xl sm:text-3xl md:text-4xl lg:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 lg:mb-8 leading-tight tracking-tight">
                 <motion.span
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -145,7 +145,7 @@ export default function HeroUpgraded() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/85 max-w-xl leading-relaxed mx-auto lg:mx-0"
+                className="text-base sm:text-lg md:text-xl text-white/85 max-w-3xl leading-relaxed mx-auto lg:mx-0"
               >
                 A licensed pharmaceutical company committed to manufacturing,
                 research, and distributing quality medicines across India since 2009.
@@ -157,14 +157,14 @@ export default function HeroUpgraded() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex flex-col items-center lg:items-start gap-10"
+              className="flex flex-col items-center lg:items-start gap-10 lg:gap-12"
             >
               {/* CTA Buttons */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
-                className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4 w-full max-w-sm lg:max-w-none"
+                className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4 sm:gap-6 w-full max-w-md mx-auto lg:mx-0 lg:max-w-none"
               >
                 <Link href="/products" className="w-full sm:w-auto">
                   <MagneticButton className="group w-full px-8 py-4 bg-white text-[#2e3192] rounded-xl font-semibold transition-all hover:shadow-2xl hover:shadow-[#acc437]/30">
@@ -190,7 +190,7 @@ export default function HeroUpgraded() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.9 }}
-                className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-4 w-full"
+                className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 w-full"
               >
                 {trustItems.map((item, i) => (
                   <motion.div
@@ -199,7 +199,7 @@ export default function HeroUpgraded() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1 + i * 0.1 }}
                     whileHover={{ scale: 1.08, y: -4 }}
-                    className="flex flex-col items-center text-center gap-2 p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:border-[#acc437]/60 transition-all cursor-default"
+                    className="flex flex-col items-center text-center gap-2 p-4 sm:p-5 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:border-[#acc437]/60 transition-all cursor-default min-h-[140px] sm:min-h-[160px] lg:min-h-[170px]"
                   >
                     <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
                       <item.icon className="w-5 h-5 text-[#acc437]" />
@@ -217,7 +217,7 @@ export default function HeroUpgraded() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}
-            className="mt-12 md:mt-20 flex justify-center px-4"
+            className="mt-16 md:mt-24 lg:mt-28 flex justify-center px-4"
           >
             <motion.div
               animate={{ y: [0, -12, 0] }}
