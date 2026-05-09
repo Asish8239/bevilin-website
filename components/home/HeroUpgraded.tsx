@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Play, Shield, Award, Microscope, CheckCircle } from "lucide-react";
+import { ArrowRight, Play, Shield, Award, Microscope, CheckCircle, Camera } from "lucide-react";
 import { useEffect, useState } from "react";
 import MagneticButton from "@/components/ui/MagneticButton";
 import MedicineScan from "@/components/features/MedicineScan";
@@ -151,10 +151,10 @@ export default function HeroUpgraded() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5 w-full"
+            className="mt-10 flex flex-col items-center gap-4 w-full"
           >
-            <Link href="/products" className="w-full sm:w-auto max-w-sm sm:max-w-none">
-              <MagneticButton className="group w-full min-w-[220px] h-[64px] px-8 bg-white text-[#2e3192] rounded-2xl font-semibold transition-all hover:shadow-2xl hover:shadow-[#acc437]/30">
+            <Link href="/products" className="w-full max-w-[320px] sm:max-w-none sm:w-auto">
+              <MagneticButton className="group w-full sm:min-w-[220px] h-[64px] px-8 bg-white text-[#2e3192] rounded-2xl font-semibold transition-all hover:shadow-2xl hover:shadow-[#acc437]/30 flex items-center justify-center">
                 <span className="flex items-center justify-center gap-2">
                   <span>Explore Products</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
@@ -162,11 +162,25 @@ export default function HeroUpgraded() {
               </MagneticButton>
             </Link>
 
-            <div className="w-full sm:w-auto max-w-sm sm:max-w-none">
-              <MedicineScan />
+            <div className="w-full max-w-[320px] sm:max-w-none sm:w-auto">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  const scanButton = document.querySelector('[data-medicine-scan]') as HTMLButtonElement;
+                  if (scanButton) scanButton.click();
+                }}
+                className="w-full h-[64px] px-8 bg-gradient-to-r from-[#0073bd] to-[#53a847] text-white rounded-2xl font-semibold transition-all hover:shadow-2xl hover:shadow-[#53a847]/30 flex items-center justify-center gap-2"
+              >
+                <Camera className="w-5 h-5" />
+                Scan Medicine
+              </motion.button>
+              <div className="hidden">
+                <MedicineScan />
+              </div>
             </div>
 
-            <MagneticButton className="group w-full sm:w-auto max-w-sm sm:max-w-none min-w-[220px] h-[64px] px-8 bg-white/10 backdrop-blur-lg border-2 border-white/30 text-white rounded-2xl font-semibold hover:bg-white/20 hover:border-white/50 transition-all">
+            <MagneticButton className="group w-full max-w-[320px] sm:max-w-none sm:w-auto sm:min-w-[220px] h-[64px] px-8 bg-white/10 backdrop-blur-lg border-2 border-white/30 text-white rounded-2xl font-semibold hover:bg-white/20 hover:border-white/50 transition-all flex items-center justify-center">
               <Link href="/blog" className="flex items-center justify-center gap-2">
                 <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 Watch Our Story

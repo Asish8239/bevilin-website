@@ -34,6 +34,7 @@ export default function MedicineScan() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(true)}
+        data-medicine-scan
         className="flex items-center gap-2 px-6 py-3 bg-gradient-primary text-white rounded-xl font-semibold hover:shadow-glow transition-all"
       >
         <Camera className="w-5 h-5" />
