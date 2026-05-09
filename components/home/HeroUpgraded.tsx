@@ -26,203 +26,190 @@ export default function HeroUpgraded() {
   }, [words.length]);
 
   return (
-    <section className="relative flex flex-col">
-      {/* ── Hero content block ── */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background gradient */}
       <div
-        className="relative flex items-center justify-center min-h-screen pt-28 sm:pt-32 lg:pt-36 xl:pt-40"
+        className="absolute inset-0"
         style={{
           background:
             "linear-gradient(135deg, #2e3192 0%, #0073bd 30%, #00aeef 60%, #53a847 80%, #acc437 100%)",
         }}
-      >
-        {/* Animated gradient overlay */}
-        <div
-          className="absolute inset-0 opacity-50"
-          style={{
-            background:
-              "linear-gradient(135deg, #2e3192 0%, #0073bd 30%, #00aeef 60%, #53a847 80%, #acc437 100%)",
-            backgroundSize: "400% 400%",
-            animation: "gradientShift 15s ease infinite",
-          }}
-        />
+      />
 
-        {/* Floating particles */}
-        <div className="absolute inset-0 pointer-events-none">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-2 h-2 rounded-full"
-              style={{
-                background: i % 2 === 0 ? "#53a847" : "#00aeef",
-                left: `${(i * 5.1) % 100}%`,
-                top: `${(i * 7.3) % 100}%`,
-              }}
-              animate={{
-                y: [0, -30, 0],
-                x: [0, i % 2 === 0 ? 10 : -10, 0],
-                opacity: [0.3, 0.8, 0.3],
-                scale: [1, 1.5, 1],
-              }}
-              transition={{
-                duration: 3 + (i % 3),
-                repeat: Infinity,
-                delay: i * 0.15,
-              }}
-            />
-          ))}
-        </div>
+      {/* Animated gradient overlay */}
+      <div
+        className="absolute inset-0 opacity-50"
+        style={{
+          background:
+            "linear-gradient(135deg, #2e3192 0%, #0073bd 30%, #00aeef 60%, #53a847 80%, #acc437 100%)",
+          backgroundSize: "400% 400%",
+          animation: "gradientShift 15s ease infinite",
+        }}
+      />
 
-        {/* Animated blobs */}
-        <motion.div
-          className="absolute w-[500px] h-[500px] rounded-full opacity-25 blur-3xl pointer-events-none"
-          style={{
-            background: "radial-gradient(circle, #acc437 0%, transparent 70%)",
-            top: "5%",
-            left: "5%",
-          }}
-          animate={{ x: [0, 80, 0], y: [0, -80, 0], scale: [1, 1.2, 1] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute w-[400px] h-[400px] rounded-full opacity-25 blur-3xl pointer-events-none"
-          style={{
-            background: "radial-gradient(circle, #00aeef 0%, transparent 70%)",
-            bottom: "10%",
-            right: "5%",
-          }}
-          animate={{ x: [0, -80, 0], y: [0, 80, 0], scale: [1, 1.3, 1] }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-        />
+      {/* Floating particles */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 rounded-full"
+            style={{
+              background: i % 2 === 0 ? "#53a847" : "#00aeef",
+              left: `${(i * 5.1) % 100}%`,
+              top: `${(i * 7.3) % 100}%`,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              x: [0, i % 2 === 0 ? 10 : -10, 0],
+              opacity: [0.3, 0.8, 0.3],
+              scale: [1, 1.5, 1],
+            }}
+            transition={{
+              duration: 3 + (i % 3),
+              repeat: Infinity,
+              delay: i * 0.15,
+            }}
+          />
+        ))}
+      </div>
 
-        {/* ── Main layout: left text | right buttons + trust ── */}
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 pb-20 md:pb-28">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 xl:gap-20 items-center">
+      {/* Animated blobs */}
+      <motion.div
+        className="absolute w-[500px] h-[500px] rounded-full opacity-25 blur-3xl pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, #acc437 0%, transparent 70%)",
+          top: "5%",
+          left: "5%",
+        }}
+        animate={{ x: [0, 80, 0], y: [0, -80, 0], scale: [1, 1.2, 1] }}
+        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute w-[400px] h-[400px] rounded-full opacity-25 blur-3xl pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, #00aeef 0%, transparent 70%)",
+          bottom: "10%",
+          right: "5%",
+        }}
+        animate={{ x: [0, -80, 0], y: [0, 80, 0], scale: [1, 1.3, 1] }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+      />
 
-            {/* LEFT — centered heading + subheading */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center lg:text-left max-w-3xl mx-auto lg:mx-0"
-            >
-              {/* Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="w-fit max-w-[90%] mx-auto lg:mx-0 flex items-center justify-center gap-2 flex-wrap px-4 py-2 sm:px-5 sm:py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white mb-8 lg:mb-10"
+      {/* Main content container */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-32 lg:pt-36 pb-20">
+        <div className="flex flex-col items-center text-center">
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-8 w-fit max-w-[90%] mx-auto px-6 py-3 rounded-full backdrop-blur-md bg-white/10 border border-white/20"
+          >
+            <div className="flex items-center justify-center gap-2 flex-wrap">
+              <Award className="w-4 h-4 text-[#acc437] shrink-0" />
+              <span className="text-sm sm:text-base font-medium leading-relaxed text-white">
+                Licensed &amp; Certified Since 2022 · GMP Compliant
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Heading */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="max-w-4xl mx-auto"
+          >
+            <h1 className="text-5xl lg:text-7xl font-bold leading-tight tracking-tight text-white mb-4">
+              <span className="block">Healthcare Built on</span>
+              <motion.span
+                key={currentWord}
+                initial={{ opacity: 0, y: 30, scale: 0.8 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -30, scale: 0.8 }}
+                transition={{ duration: 0.6, type: "spring" }}
+                className="block bg-gradient-to-r from-[#acc437] via-[#53a847] to-[#00aeef] bg-clip-text text-transparent"
               >
-                <Award className="w-4 h-4 text-[#acc437] shrink-0" />
-                <span className="text-xs sm:text-sm font-medium leading-relaxed text-center break-words">
-                  Licensed &amp; Certified Since 2022 · GMP Compliant
+                {words[currentWord]}
+              </motion.span>
+            </h1>
+          </motion.div>
+
+          {/* Subtext */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="max-w-3xl mx-auto mt-6 text-lg sm:text-xl leading-relaxed text-center text-white/85"
+          >
+            A licensed pharmaceutical company committed to manufacturing,
+            research, and distributing quality medicines across India since 2009.
+          </motion.p>
+
+          {/* Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5 w-full"
+          >
+            <Link href="/products" className="w-full sm:w-auto max-w-sm sm:max-w-none">
+              <MagneticButton className="group w-full min-w-[220px] h-[64px] px-8 bg-white text-[#2e3192] rounded-2xl font-semibold transition-all hover:shadow-2xl hover:shadow-[#acc437]/30">
+                <span className="flex items-center justify-center gap-2">
+                  <span>Explore Products</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                 </span>
-              </motion.div>
+              </MagneticButton>
+            </Link>
 
-              {/* Heading */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 lg:mb-8 leading-tight tracking-tight">
-                <motion.span
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="block"
-                >
-                  Healthcare Built on
-                </motion.span>
-                <motion.span
-                  key={currentWord}
-                  initial={{ opacity: 0, y: 30, scale: 0.8 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -30, scale: 0.8 }}
-                  transition={{ duration: 0.6, type: "spring" }}
-                  className="block bg-gradient-to-r from-[#acc437] via-[#53a847] to-[#00aeef] bg-clip-text text-transparent"
-                >
-                  {words[currentWord]}
-                </motion.span>
-              </h1>
+            <div className="w-full sm:w-auto max-w-sm sm:max-w-none">
+              <MedicineScan />
+            </div>
 
-              {/* Subheading — corporate, no delivery language */}
-              <motion.p
+            <MagneticButton className="group w-full sm:w-auto max-w-sm sm:max-w-none min-w-[220px] h-[64px] px-8 bg-white/10 backdrop-blur-lg border-2 border-white/30 text-white rounded-2xl font-semibold hover:bg-white/20 hover:border-white/50 transition-all">
+              <Link href="/blog" className="flex items-center justify-center gap-2">
+                <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                Watch Our Story
+              </Link>
+            </MagneticButton>
+          </motion.div>
+
+          {/* Feature cards */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.9 }}
+            className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl mx-auto"
+          >
+            {trustItems.map((item, i) => (
+              <motion.div
+                key={i}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="text-base sm:text-lg md:text-xl text-white/85 max-w-3xl leading-relaxed mx-auto lg:mx-0"
+                transition={{ delay: 1 + i * 0.1 }}
+                whileHover={{ scale: 1.08, y: -4 }}
+                className="flex flex-col items-center justify-center text-center gap-3 p-6 min-h-[180px] bg-white/10 backdrop-blur-lg rounded-3xl border border-white/20 hover:border-[#acc437]/60 transition-all cursor-default"
               >
-                A licensed pharmaceutical company committed to manufacturing,
-                research, and distributing quality medicines across India since 2009.
-              </motion.p>
-            </motion.div>
-
-            {/* RIGHT — buttons + vertical trust indicators */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex flex-col items-center lg:items-start gap-10 lg:gap-12"
-            >
-              {/* CTA Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7 }}
-                className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4 sm:gap-6 w-full max-w-md mx-auto lg:mx-0 lg:max-w-none"
-              >
-                <Link href="/products" className="w-full sm:w-auto">
-                  <MagneticButton className="group w-full px-8 py-4 bg-white text-[#2e3192] rounded-xl font-semibold transition-all hover:shadow-2xl hover:shadow-[#acc437]/30">
-                    <span className="flex items-center justify-center gap-2">
-                      <span>Explore Products</span>
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-                    </span>
-                  </MagneticButton>
-                </Link>
-
-                <MedicineScan />
-
-                <MagneticButton className="group w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-lg border-2 border-white/30 text-white rounded-xl font-semibold hover:bg-white/20 hover:border-white/50 transition-all">
-                  <Link href="/blog" className="flex items-center justify-center gap-2">
-                    <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                    Watch Our Story
-                  </Link>
-                </MagneticButton>
+                <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                  <item.icon className="w-6 h-6 text-[#acc437]" />
+                </div>
+                <div className="text-white font-bold text-base">{item.value}</div>
+                <div className="text-white/70 text-sm leading-tight">{item.label}</div>
               </motion.div>
+            ))}
+          </motion.div>
 
-              {/* Vertical trust indicators */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.9 }}
-                className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 w-full"
-              >
-                {trustItems.map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1 + i * 0.1 }}
-                    whileHover={{ scale: 1.08, y: -4 }}
-                    className="flex flex-col items-center text-center gap-2 p-4 sm:p-5 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:border-[#acc437]/60 transition-all cursor-default min-h-[140px] sm:min-h-[160px] lg:min-h-[170px]"
-                  >
-                    <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
-                      <item.icon className="w-5 h-5 text-[#acc437]" />
-                    </div>
-                    <div className="text-white font-bold text-sm">{item.value}</div>
-                    <div className="text-white/70 text-xs leading-tight">{item.label}</div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </motion.div>
-          </div>
-
-          {/* BOTTOM CENTER — floating pharma grid (enlarged) */}
+          {/* Pharma grid */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}
-            className="mt-16 md:mt-24 lg:mt-28 flex justify-center px-4"
+            className="mt-20 w-full max-w-[720px] mx-auto"
           >
             <motion.div
               animate={{ y: [0, -12, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="w-full max-w-[720px]"
+              className="w-full"
               style={{
                 background: "rgba(255,255,255,0.12)",
                 backdropFilter: "blur(10px)",
@@ -270,8 +257,8 @@ export default function HeroUpgraded() {
         </div>
       </div>
 
-      {/* ── Wave separator — below content, never overlaps ── */}
-      <div className="w-full leading-none" style={{ marginTop: "-2px", background: "#fff" }}>
+      {/* Wave separator */}
+      <div className="absolute bottom-0 left-0 right-0 w-full leading-none">
         <svg
           viewBox="0 0 1440 80"
           xmlns="http://www.w3.org/2000/svg"

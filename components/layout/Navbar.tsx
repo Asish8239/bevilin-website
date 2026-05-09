@@ -38,7 +38,7 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: visible ? 0 : -100 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-md border-b border-gray-200 shadow-sm"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200/60 shadow-sm"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-[90px] sm:h-[100px]">
@@ -61,7 +61,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-800 hover:text-blue-600 font-medium transition-colors text-sm whitespace-nowrap"
+                className="text-slate-800 hover:text-[#8CBF26] font-medium transition-colors text-sm whitespace-nowrap"
               >
                 {link.label}
               </Link>
@@ -110,7 +110,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-4 py-3 text-gray-800 hover:bg-gray-100 rounded-lg transition-colors font-medium"
+                  className="block px-4 py-3 text-slate-800 hover:bg-gray-100 rounded-lg transition-colors font-medium"
                 >
                   {link.label}
                 </Link>
