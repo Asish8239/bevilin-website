@@ -110,10 +110,10 @@ export default function HeroUpgraded() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full text-white mb-8"
+                className="w-fit max-w-[90%] mx-auto lg:mx-0 flex items-center justify-center gap-2 flex-wrap px-4 py-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full text-white mb-8"
               >
-                <Award className="w-4 h-4 text-[#acc437]" />
-                <span className="text-sm font-medium">
+                <Award className="w-4 h-4 text-[#acc437] shrink-0" />
+                <span className="text-xs sm:text-sm font-medium leading-snug text-center break-words">
                   Licensed &amp; Certified Since 2022 · GMP Compliant
                 </span>
               </motion.div>
