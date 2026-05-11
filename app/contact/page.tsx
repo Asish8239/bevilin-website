@@ -29,7 +29,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-20">
+    <div className="min-h-screen bg-gray-50 pt-32 md:pt-36 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -91,17 +91,6 @@ export default function ContactPage() {
                         India
                       </p>
                     </div>
-                  </div>
-                </div>
-
-                <div className="mt-8 pt-8 border-t border-gray-200">
-                  <h3 className="font-semibold text-gray-900 mb-4">
-                    Business Hours
-                  </h3>
-                  <div className="space-y-2 text-gray-600">
-                    <p>Monday - Friday: 9:00 AM - 8:00 PM</p>
-                    <p>Saturday: 9:00 AM - 6:00 PM</p>
-                    <p>Sunday: 10:00 AM - 4:00 PM</p>
                   </div>
                 </div>
               </div>

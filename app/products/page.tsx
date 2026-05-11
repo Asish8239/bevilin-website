@@ -3,22 +3,23 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { Product } from "@/types";
 
 function ProductImageCard({ product, index }: { product: Product; index: number }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.04 }}
-      whileHover={{ y: -8, scale: 1.04 }}
-      whileTap={{ scale: 0.97 }}
-      className="group relative rounded-2xl overflow-hidden bg-white cursor-pointer"
-      style={{ boxShadow: "0 4px 24px rgba(46,49,146,0.08)" }}
-    >
-      <Link href={`/products/${product.id}`} className="block">
-        {/* Image */}
+    <>
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: index * 0.04 }}
+        whileHover={{ y: -8, scale: 1.04 }}
+        whileTap={{ scale: 0.97 }}
+        onClick={() => setIsOpen(true)}
+        className="group relative rounded-2xl overflow-hidden bg-white cursor-pointer"
+        style={{ boxShadow: "0 4px 24px rgba(46,49,146,0.08)" }}
+      >
         <div className="relative aspect-square bg-gray-50">
           <Image
             src={product.image}
@@ -28,7 +29,6 @@ function ProductImageCard({ product, index }: { product: Product; index: number 
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
           />
 
-          {/* Hover glow overlay */}
           <div
             className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"
             style={{
@@ -37,8 +37,30 @@ function ProductImageCard({ product, index }: { product: Product; index: number 
             }}
           />
         </div>
-      </Link>
-    </motion.div>
+      </motion.div>
+
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          onClick={() => setIsOpen(false)}
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            className="relative max-w-4xl w-full aspect-square bg-white rounded-2xl p-8"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              className="object-contain p-8"
+            />
+          </motion.div>
+        </div>
+      )}
+    </>
   );
 }
 
@@ -56,9 +78,8 @@ export default function ProductsPage() {
   }, []);
 
   return (
-    <div className="min-h-screen py-20" style={{ background: "#f8fafc" }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:px-6">
-        {/* Header */}
+    <div className="min-h-screen pt-32 md:pt-36 pb-20" style={{ background: "#f8fafc" }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -71,7 +92,7 @@ export default function ProductsPage() {
           >
             Our Range
           </p>
-          <h1 className="text-4xl md:text-3xl sm:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Our <span style={{ color: "#acc437" }}>Products</span>
           </h1>
           <p className="text-lg text-gray-500 max-w-xl mx-auto">
@@ -79,7 +100,6 @@ export default function ProductsPage() {
           </p>
         </motion.div>
 
-        {/* Skeleton */}
         {loading && (
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
             {[...Array(10)].map((_, i) => (
@@ -91,7 +111,6 @@ export default function ProductsPage() {
           </div>
         )}
 
-        {/* Product grid — images only */}
         {!loading && (
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
             {products.map((product, index) => (

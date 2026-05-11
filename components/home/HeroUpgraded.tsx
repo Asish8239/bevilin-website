@@ -26,7 +26,7 @@ export default function HeroUpgraded() {
   }, [words.length]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden border-0 shadow-none outline-none">
       {/* Background gradient */}
       <div
         className="absolute inset-0"
@@ -151,10 +151,10 @@ export default function HeroUpgraded() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="mt-10 flex flex-col items-center gap-4 w-full"
+            className="mt-10 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-5 w-full"
           >
-            <Link href="/products" className="w-full max-w-[320px] sm:max-w-none sm:w-auto">
-              <MagneticButton className="group w-full sm:min-w-[220px] h-[64px] px-8 bg-white text-[#2e3192] rounded-2xl font-semibold transition-all hover:shadow-2xl hover:shadow-[#acc437]/30 flex items-center justify-center">
+            <Link href="/products" className="w-full max-w-[320px] md:max-w-none md:w-auto">
+              <MagneticButton className="group w-full md:min-w-[220px] h-[64px] px-8 bg-white text-[#2e3192] rounded-2xl font-semibold transition-all hover:shadow-2xl hover:shadow-[#acc437]/30 flex items-center justify-center">
                 <span className="flex items-center justify-center gap-2">
                   <span>Explore Products</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
@@ -162,7 +162,7 @@ export default function HeroUpgraded() {
               </MagneticButton>
             </Link>
 
-            <div className="w-full max-w-[320px] sm:max-w-none sm:w-auto">
+            <div className="w-full max-w-[320px] md:max-w-none md:w-auto">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -180,7 +180,7 @@ export default function HeroUpgraded() {
               </div>
             </div>
 
-            <MagneticButton className="group w-full max-w-[320px] sm:max-w-none sm:w-auto sm:min-w-[220px] h-[64px] px-8 bg-white/10 backdrop-blur-lg border-2 border-white/30 text-white rounded-2xl font-semibold hover:bg-white/20 hover:border-white/50 transition-all flex items-center justify-center">
+            <MagneticButton className="group w-full max-w-[320px] md:max-w-none md:w-auto md:min-w-[220px] h-[64px] px-8 bg-white/10 backdrop-blur-lg border-2 border-white/30 text-white rounded-2xl font-semibold hover:bg-white/20 hover:border-white/50 transition-all flex items-center justify-center">
               <Link href="/blog" className="flex items-center justify-center gap-2">
                 <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 Watch Our Story
@@ -272,16 +272,19 @@ export default function HeroUpgraded() {
       </div>
 
       {/* Wave separator */}
-      <div className="absolute bottom-0 left-0 right-0 w-full leading-none">
+      <div className="absolute bottom-0 left-0 right-0 w-full border-0 shadow-none outline-none" style={{ lineHeight: 0, marginBottom: '-1px' }}>
         <svg
           viewBox="0 0 1440 80"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
-          className="w-full block"
+          className="w-full block border-0 shadow-none outline-none"
+          style={{ display: 'block', verticalAlign: 'bottom', border: 'none', outline: 'none' }}
         >
           <path
             d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"
             fill="white"
+            stroke="none"
+            strokeWidth="0"
           />
         </svg>
       </div>

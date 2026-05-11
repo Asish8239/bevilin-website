@@ -72,8 +72,8 @@ export default function BlogPage() {
   }, []);
 
   return (
-    <div className="min-h-screen py-20" style={{ background: "#f8fafc" }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:px-6">
+    <div className="min-h-screen pt-32 md:pt-36 pb-20" style={{ background: "#f8fafc" }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
