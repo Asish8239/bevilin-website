@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -11,21 +12,74 @@ export default function ContactPage() {
     phone: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: "", email: "", phone: "", message: "" });
-    }, 3000);
-  };
+  useEffect(() => {
+    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "");
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setStatus("error");
+      setErrorMessage("Please fill in all required fields");
+      setTimeout(() => setStatus("idle"), 4000);
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setStatus("error");
+      setErrorMessage("Please enter a valid email address");
+      setTimeout(() => setStatus("idle"), 4000);
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+
+      if (!serviceId || !templateId) {
+        setStatus("error");
+        setErrorMessage("Email service not configured. Please contact support.");
+        setTimeout(() => setStatus("idle"), 4000);
+        setLoading(false);
+        return;
+      }
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone || "Not provided",
+          message: formData.message,
+          to_email: "info@bevilin.com",
+        }
+      );
+
+      setStatus("success");
+      setFormData({ name: "", email: "", phone: "", message: "" });
+      setTimeout(() => setStatus("idle"), 4000);
+    } catch {
+      setStatus("error");
+      setErrorMessage("Failed to send message. Please try again.");
+      setTimeout(() => setStatus("idle"), 4000);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -54,7 +108,7 @@ export default function ContactPage() {
                   Contact Information
                 </h2>
 
-                  <div className="space-y-6">
+                <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Phone className="w-6 h-6 text-primary-600" />
@@ -106,10 +160,32 @@ export default function ContactPage() {
                   Send us a Message
                 </h2>
 
+                {status === "success" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-center gap-3"
+                  >
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                    <p className="text-green-700 font-medium">Message sent successfully! We&apos;ll get back to you soon.</p>
+                  </motion.div>
+                )}
+
+                {status === "error" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-center gap-3"
+                  >
+                    <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
+                    <p className="text-red-700 font-medium">{errorMessage}</p>
+                  </motion.div>
+                )}
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Name
+                      Name <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -124,7 +200,7 @@ export default function ContactPage() {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Email
+                      Email <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="email"
@@ -153,7 +229,7 @@ export default function ContactPage() {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Message
+                      Message <span className="text-red-500">*</span>
                     </label>
                     <textarea
                       name="message"
@@ -168,11 +244,14 @@ export default function ContactPage() {
 
                   <button
                     type="submit"
-                    disabled={submitted}
-                    className="w-full bg-gradient-primary text-white py-4 rounded-xl font-semibold hover:shadow-glow transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+                    disabled={loading}
+                    className="w-full bg-gradient-primary text-white py-4 rounded-xl font-semibold hover:shadow-glow transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
-                    {submitted ? (
-                      "Message Sent!"
+                    {loading ? (
+                      <>
+                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white" />
+                        Sending...
+                      </>
                     ) : (
                       <>
                         <Send className="w-5 h-5" />

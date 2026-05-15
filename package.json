@@ -11,6 +11,7 @@
     "fresh": "npm run clean && npm install && npm run dev"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "framer-motion": "^11.18.2",
